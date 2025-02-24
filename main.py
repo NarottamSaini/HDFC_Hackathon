@@ -30,27 +30,6 @@ file_path = ".\\notebooks\\vector_index.pkl"
 main_placeholder = st.empty()
 llm = OpenAI(temperature=0.9, max_tokens=500, model = "gpt-3.5-turbo-instruct")  ## model = "gpt-3.5-turbo", , model= "gpt-3.5-turbo-instruct", 'gpt-4o-mini'
 
-# # if process_url_clicked:
-# # load data
-# loader = UnstructuredURLLoader(urls=urls)
-# main_placeholder.text("Data Loading...Started...✅✅✅")
-# data = loader.load()
-# # split data
-# text_splitter = RecursiveCharacterTextSplitter(
-#     separators=['\n\n', '\n', '.', ','],
-#     chunk_size=1000
-# )
-# main_placeholder.text("Text Splitter...Started...✅✅✅")
-# docs = text_splitter.split_documents(data)
-# # create embeddings and save it to FAISS index
-# embeddings = OpenAIEmbeddings(model='text-embedding-ada-002') ##model="gpt-3.5-turbo"
-# vectorstore_openai = FAISS.from_documents(docs, embeddings)
-# main_placeholder.text("Embedding Vector Started Building...✅✅✅")
-# time.sleep(2)
-
-# # Save the FAISS index to a pickle file
-# with open(file_path, "wb") as f:
-#     pickle.dump(vectorstore_openai, f)
 
 query = main_placeholder.text_input("Question: ")
 print("query : ", query)
